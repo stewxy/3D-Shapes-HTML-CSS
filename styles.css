@@ -1,3 +1,63 @@
-﻿body
-{
+﻿@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(360deg);
+    }
 }
+
+.stage {
+    width: 300px;
+    height: 300px;
+    -webkit-perspective: 1600px;
+    -webkit-perspective-origin: 50% -240px;
+}
+
+figure {
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    /*background-color: #60c2ef;*/ 
+}
+.cube {
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: rotate 10s infinite linear;
+}
+
+figure {
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+.front {
+    -webkit-transform: translateZ(150px);
+    background-color: red;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg) translateZ(150px);
+    background-color: green;
+}
+
+.top {
+    -webkit-transform: rotateX(90deg) translateZ(150px);
+    background-color: blue;
+}
+
+.bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
+    background-color: yellow;
+}
+
+.left {
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
+    background-color: purple;
+}
+
+.right {
+    -webkit-transform: rotateY(90deg) translateZ(150px);
+    background-color: orange;
+}
+

@@ -1,2 +1,2 @@
 # p1
-A project
+HTML, CSS project

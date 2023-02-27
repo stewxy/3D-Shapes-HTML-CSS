@@ -36,11 +36,17 @@
     }
 }
 
+body {
+    background-color: #2c3035;
+}
+
 .stage {
     width: 300px;
     height: 300px;
     -webkit-perspective: 1600px;
     -webkit-perspective-origin: 50% -240px;
+    position: relative;
+    margin: 100px auto;
 }
 
 figure {
@@ -56,13 +62,21 @@ figure {
     -webkit-animation: rotate 10s infinite linear;
 }
 
-figure {
+/*figure {
     -webkit-transform-origin: 50% 50% 0;
+    -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(RGBA(0, 0, 0, 0.1)));
+}*/
+
+.front {
+    transform: rotateX(180deg) translateY(15px) skew(135deg) translateX(30px);
+    mask-image: linear-gradient(transparent 50%, white 90%);
+    -webkit-mask-image: linear-gradient(transparent 50%, white 90%);
 }
 
 .front {
     -webkit-transform: translateZ(150px);
     background-color: lightcoral;
+    
 }
 
 .back {
@@ -103,23 +117,13 @@ figure:before {
     background: -webkit-radial-gradient(top left, rgba(0, 0, 0, 0.5), #000000);
 }
 
-figure:after, .left:after, .right:after, .back:before {
+figure:after {
     background: -webkit-radial-gradient(top right, rgba(0, 0, 0, 0.5), #000000);
 }
 
-.front:before, .left:before, .right:before, .back:before {
+.front:before {
     -webkit-animation: frontShading1 10s infinite linear;
 }
-
-/*.top:after {
-    opacity: 0.5;
-    width: 200%;
-    height: 200%;
-    margin-left: -50%;
-    margin-top: -50%;
-    background: -webkit-radial-gradient(bottom, rgba(0, 0, 0, 0), #000000);
-    -webkit-animation: rotateTop 10s infinite linear;
-}*/
 
 .bottom {
     -webkit-box-shadow: 0 10px 100px rgba(0, 0, 0, 0.7);

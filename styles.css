@@ -159,17 +159,35 @@ pfigure {
     -webkit-transform-style: preserve-3d;
 }
 
-.pfront{
+.pfront {
+    width: 0;
+    height: 100px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid lightcoral;
+    -webkit-transform: rotateZX(30deg) translateZ(100px);
 }
+/*.pfront {
+    -webkit-transform: translateZ(100px);
+    background-color: lightcoral;
+}*/
 .pback {
+    -webkit-transform: rotateY(180deg) translateZ(100px);
+    background-color: lightgreen;
 }
 .ptop {
+    -webkit-transform: rotateX(90deg) translateZ(100px);
+    background-color: lightblue;
 }
 .pbottom {
+    -webkit-transform: rotateX(-90deg) translateZ(100px);
+    background-color: lightyellow;
 }
-.pleft{
-
+.pleft {
+    -webkit-transform: rotateY(-90deg) translateZ(100px);
+    background-color: lightgrey;
 }
-.pright{
-
+.pright {
+    -webkit-transform: rotateY(90deg) translateZ(100px);
+    background-color: lightsalmon;
 }
